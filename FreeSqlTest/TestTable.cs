@@ -17,4 +17,9 @@ internal class TestTable
 
     [Column(DbType = "DateTime64(3, 'Asia/Shanghai')")]
     public DateTime Time { get; set; }
+
+    public override string ToString()
+    {
+        return $"Id:{Id}  Content:{Content}  Content2:{Content2}  Time:{Time}";
+    }
 }

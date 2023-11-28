@@ -53,8 +53,14 @@ data.First().Content2 = json;
 //成功插入超长字符串
 await fsql.Insert(data).ExecuteAffrowsAsync();
 
+var result = await fsql.Select<TestTable>().OrderByDescending(x => x.Time).Take(20).ToListAsync();
+foreach (var res in result)
+{
+    Console.WriteLine(res);
+}
+
 //单个插入报错
 await fsql.Insert(data.First()).ExecuteAffrowsAsync();
 
 
-Console.WriteLine("插入完成");
+Console.WriteLine("结束测试");
