@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34316.72
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeSqlTest", "FreeSqlTest\FreeSqlTest.csproj", "{BE6BE4FD-4546-4E29-A069-8A8A07924890}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE6BE4FD-4546-4E29-A069-8A8A07924890}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE6BE4FD-4546-4E29-A069-8A8A07924890}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE6BE4FD-4546-4E29-A069-8A8A07924890}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE6BE4FD-4546-4E29-A069-8A8A07924890}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7D9FBF34-EC3C-49BF-84AF-ADB6A64696E7}
+	EndGlobalSection
+EndGlobal
