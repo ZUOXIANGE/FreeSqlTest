@@ -7,8 +7,17 @@ var connStr = @"Host=127.0.0.1;Port=8123;Username=root;Password=123;Database=Tes
 var fsql = new FreeSql.FreeSqlBuilder()
     .UseConnectionString(FreeSql.DataType.ClickHouse, connStr)
     .UseAutoSyncStructure(true)
+    //.UseNoneCommandParameter(true)
     .UseExitAutoDisposePool(false)
     .Build();
+
+fsql.Aop.CommandBefore += (_, e) =>
+{
+
+};
+var id = fsql.Ado.Query<int>("select @id", new { id = 1 });
+
+
 
 Console.WriteLine("开始创建数据");
 
@@ -28,7 +37,7 @@ for (int i = 0; i < 10; i++)
     };
 
     Console.WriteLine("测试单个插入字符串值改变");
-    await fsql.Insert(t).ExecuteAffrowsAsync();
+    await fsql.Insert(t).NoneParameter().ExecuteAffrowsAsync();
 
     data.Add(t);
 }
@@ -51,7 +60,7 @@ json += json;
 data.First().Content2 = json;
 
 //成功插入超长字符串
-await fsql.Insert(data).ExecuteAffrowsAsync();
+//await fsql.Insert(data).ExecuteAffrowsAsync();
 
 var result = await fsql.Select<TestTable>().OrderByDescending(x => x.Time).Take(20).ToListAsync();
 foreach (var res in result)
@@ -60,7 +69,7 @@ foreach (var res in result)
 }
 
 //单个插入报错
-await fsql.Insert(data.First()).ExecuteAffrowsAsync();
+await fsql.Insert(data.First()).NoneParameter().ExecuteAffrowsAsync();
 
 
 Console.WriteLine("结束测试");

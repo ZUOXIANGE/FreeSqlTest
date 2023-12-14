@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FreeSql.Provider.ClickHouse" Version="3.2.805" />
+    <PackageReference Include="FreeSql.Provider.ClickHouse" Version="3.2.806" />
   </ItemGroup>
 
 </Project>
